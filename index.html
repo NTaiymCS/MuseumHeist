@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Heist | Case File 0214</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div>
+            <p class="header-kicker">MUSEUM HEIST</p>
+        </div>
+        <p class="case-stamp">CASE FILE <strong>0214</strong></p>
+    </header>
 
+    <main class="home-container" id="home-screen">
+        <section class="intro">
+            <p class="eyebrow">CONFIDENTIAL INVESTIGATION / 9:00 PM</p>
+            <h1>THE MISSING <span>MASTERPIECE</span></h1>
+            <p class="description">
+                Museum security has discovered that Georges Seurat's
+                <em>A Sunday on La Grande Jatte — 1884</em> has disappeared
+                from its gallery wall. The building is on lockdown as the thief is in the vault.
+                You have twenty minutes to examine the evidence, recover the five-digit
+                vault code, and return the painting.
+            </p>
+
+            <div class="case-facts">
+                <div><strong>05</strong><span>EVIDENCE FILES</span></div>
+                <div><strong>20</strong><span>MINUTES</span></div>
+                <div><strong>01</strong><span>MISSING PAINTING</span></div>
+            </div>
+
+            <div class="start-section">
+                <label for="username">INVESTIGATOR CODENAME</label>
+                <input type="text" id="username" maxlength="15" placeholder="Enter a codename" autocomplete="off">
+                <button id="start-button" type="button">OPEN THE CASE FILE</button>
+                <p id="error-message" class="message" role="alert"></p>
+            </div>
+        </section>
+
+        <aside class="hero-record">
+            <p class="record-label">COLLECTION RECORD / 01</p>
+            <div class="hero-image-frame">
+                <img
+                    id="hero-artwork"
+                    src="https://www.artic.edu/iiif/2/2d484387-2509-5e8e-2c43-22f9981972eb/full/843,/0/default.jpg"
+                    alt="A Sunday on La Grande Jatte — 1884 by Georges Seurat, from the Art Institute of Chicago collection"
+                >
+            </div>
+            <p class="artwork-title">A Sunday on La Grande Jatte — 1884</p>
+            <p class="artwork-credit">Georges Seurat · Art Institute of Chicago</p>
+            <a href="https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884" target="_blank" rel="noopener">VIEW COLLECTION RECORD</a>
+            <p class="artifact-note"><span>PROPERTY MISSING</span><br>A SUNDAY ON LA GRANDE JATTE<br><small>GEORGES SEURAT · CASE 0214</small></p>
+        </aside>
+</main>
+
+    <main class="game-container" id="game-screen" hidden>
+        <section class="game-heading">
+            <div>
+                <p class="eyebrow">SECURITY DIVISION / ACTIVE CASE</p>
+                <h1>Investigation in Progress</h1>
+                <p id="player-welcome">Investigator</p>
+            </div>
+            <div class="timer-card">
+                <span>TIME REMAINING</span>
+                <strong id="timer">20:00</strong>
+            </div>
+        </section>
+
+        <section class="status-strip" aria-label="Case status">
+            <div><span>CASE NUMBER</span><strong>0214</strong></div>
+            <div><span>FILES SOLVED</span><strong id="progress">0 / 5</strong></div>
+            <div><span>VAULT DIGITS FOUND</span><strong id="digits-found">0 / 5</strong></div>
+        </section>
+
+        <section class="puzzle-section">
+            <div class="puzzle-topline">
+                <p class="eyebrow" id="file-label">INVESTIGATION FILE 01</p>
+                <p class="file-status">MUSEUM SECURITY EVIDENCE</p>
+            </div>
+            <div id="puzzle-area"></div>
+        </section>
+        <p class="game-footnote">Keep each recovered digit in order. You will need all five to open the vault.</p>
+    </main>
+
+    <main class="ending-container" id="ending-screen" hidden>
+        <section class="ending-record" id="ending-record">
+            <p class="eyebrow" id="ending-kicker">CASE FILE 0214 / FINAL REPORT</p>
+            <div class="ending-seal" id="ending-seal" aria-hidden="true">✦</div>
+            <h1 id="ending-title">Case closed</h1>
+            <p id="ending-message"></p>
+            <div class="ending-details" id="ending-details"></div>
+            <button type="button" id="restart-button">RETURN TO THE ARCHIVE</button>
+        </section>
+    </main>
+
+    <script src="puzzleBank.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
